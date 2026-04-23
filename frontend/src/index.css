@@ -1,0 +1,123 @@
+/* --- 1. RESET & VARIABLES --- */
+:root {
+  /* PALETTE: MONOCHROMATIC BLUE LADDER */
+  --bg-anchor: #172554;
+  --bg-body: #93c5fd;
+  --bg-gradient: linear-gradient(180deg, #93c5fd 0%, #60a5fa 100%);
+  --bg-card: #bfdbfe;
+  --bg-card-hover: #dbeafe;
+  --text-on-dark: #eff6ff;
+  --text-on-light: #172554;
+  --text-muted: #1e40af;
+  --accent-vibrant: #2563eb;
+  --grad-btn: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  --container-width: 1100px;
+  --nav-height: 80px;
+  --radius-std: 12px;
+  --glass-bg: rgba(255, 255, 255, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-on-light);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* TYPOGRAPHY */
+h1, h2, h3, h4 {
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+p {
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+ul {
+  list-style: none;
+}
+
+/* --- 2. UTILITY CLASSES --- */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #2563eb, #172554);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-std);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+}
+
+/* --- 3. BUTTONS --- */
+.btn {
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  display: inline-block;
+  text-align: center;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--grad-btn);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--accent-vibrant);
+  color: var(--accent-vibrant);
+}
+
+.btn-outline:hover {
+  background: var(--accent-vibrant);
+  color: #fff;
+}
+
+/* --- 4. ANIMATIONS --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
